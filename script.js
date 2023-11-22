@@ -13,7 +13,7 @@ function loadCards() {
         const cards = [
             {
                 "Producto": "Lejía o blanqueador",
-                "Ingredientes": ["Cloro", "Hipoclorito de sodio"],
+                "Ingredientes": ["Hipoclorito de sodio"],
                 "img": "lejia_o_blanqueador.png"
             },
             {
@@ -38,7 +38,7 @@ function loadCards() {
             },
             {
                 "Producto": "Detergentes fuertes",
-                "Ingredientes": ["Acrilamida"],
+                "Ingredientes": ["Acrilamida","detegente"],
                 "img": "detergentes_fuertes.png"
             },
             {
@@ -78,7 +78,7 @@ function loadCards() {
             },
             {
                 "Producto": "Detergentes de ropa",
-                "Ingredientes": ["Acido sulfurico", "amoniaco", "fenol", "formaldehido", "hipoclorito de sodio"],
+                "Ingredientes": ["Acido sulfurico", "amoniaco", "fenol", "formaldehido", "hipoclorito de sodio","detegente"],
                 "img": "detergentes_de_ropa.png"
             },
             {
@@ -115,6 +115,21 @@ function loadCards() {
                 "Producto": "Vinagre",
                 "Ingredientes": ["Acido acetico"],
                 "img": "vinagre.png"
+            },
+            {
+                "Producto": "Bórax",
+                "Ingredientes": ["Sal de boro"],
+                "img": "polvo_para_hornear.png"
+            },
+            {
+                "Producto": "Sal de mesa",
+                "Ingredientes": ["Sal"],
+                "img": "polvo_para_hornear.png"
+            },
+            {
+                "Producto": "Agua caliente",
+                "Ingredientes": ["agua"],
+                "img": "agua.png"
             }
         ];
         let html = '';

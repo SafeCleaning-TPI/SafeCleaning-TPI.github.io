@@ -2,7 +2,7 @@ window.onload = function() {
     const cards = [
         {
             "Producto": "Lejía o blanqueador",
-            "Ingredientes": ["Cloro", "Hipoclorito de sodio"],
+            "Ingredientes": ["Hipoclorito de sodio"],
             "img": "lejia_o_blanqueador.png"
         },
         {
@@ -27,7 +27,7 @@ window.onload = function() {
         },
         {
             "Producto": "Detergentes fuertes",
-            "Ingredientes": ["Acrilamida"],
+            "Ingredientes": ["Acrilamida","detegente"],
             "img": "detergentes_fuertes.png"
         },
         {
@@ -67,7 +67,7 @@ window.onload = function() {
         },
         {
             "Producto": "Detergentes de ropa",
-            "Ingredientes": ["Acido sulfurico", "amoniaco", "fenol", "formaldehido", "hipoclorito de sodio"],
+            "Ingredientes": ["Acido sulfurico", "amoniaco", "fenol", "formaldehido", "hipoclorito de sodio","detegente"],
             "img": "detergentes_de_ropa.png"
         },
         {
@@ -104,6 +104,21 @@ window.onload = function() {
             "Producto": "Vinagre",
             "Ingredientes": ["Acido acetico"],
             "img": "vinagre.png"
+        },
+        {
+            "Producto": "Bórax",
+            "Ingredientes": ["Sal de boro"],
+            "img": "polvo_para_hornear.png"
+        },
+        {
+            "Producto": "Sal de mesa",
+            "Ingredientes": ["Sal"],
+            "img": "polvo_para_hornear.png"
+        },
+        {
+            "Producto": "Agua caliente",
+            "Ingredientes": ["agua"],
+            "img": "agua.png"
         }
     ];
 
@@ -187,7 +202,56 @@ window.onload = function() {
             "Recomendaciones": "Manipular con guantes y gafas de proteccion",
             "Riesgos a la salud": "Irritacion cutanea y es levemente corrosivo",
             "Uso recomendado": "Limpieza de desagües"
+        },
+        {
+            "Producto 1": "Acido acetico",
+            "Producto 2": "Bicarbonato de Sodio",
+            "Riesgo": "Bajo",
+            "Recomendaciones": "Usar guantes y gafas de protección.",
+            "Riesgos a la salud": "Puede causar irritación en los ojos y la piel.",
+            "Uso recomendado": "Ayuda a aflojar la suciedad y eliminar manchas en superficies como encimeras, bañeras y lavabos."
+        },
+        {
+            "Producto 1": "Peroxido de Hidrogeno",
+            "Producto 2": "Acido acetico",
+            "Riesgo": "Medio",
+            "Recomendaciones": "Usar guantes y gafas de protección. No mezclar en un recipiente cerrado debido a la liberación de gases.",
+            "Riesgos a la salud": "Puede causar irritación en los ojos y la piel.",
+            "Uso recomendado": "Desinfección de superficies y eliminación de moho."
+        },
+        {
+            "Producto 1": "Amoniaco",
+            "Producto 2": "Detergente",
+            "Riesgo": "Alto",
+            "Recomendaciones": "Usar guantes y gafas de protección. Evitar la inhalación del producto.",
+            "Riesgos a la salud": "Puede causar quemaduras en la piel y daño ocular grave.",
+            "Uso recomendado": "Limpieza de vidrios y superficies de acero inoxidable."
+        },
+        {
+            "Producto 1": "Vinagre",
+            "Producto 2": "Sal",
+            "Riesgo": "Bajo",
+            "Recomendaciones": "Usar guantes y gafas de protección.",
+            "Riesgos a la salud": "Puede causar irritación en los ojos y la piel.",
+            "Uso recomendado": "Limpieza de superficies y eliminación de manchas."
+        },
+        {
+            "Producto 1": "Bórax",
+            "Producto 2": "Agua caliente",
+            "Riesgo": "Bajo",
+            "Recomendaciones": "Usar guantes y gafas de protección.",
+            "Riesgos a la salud": "Puede causar irritación en los ojos.",
+            "Uso recomendado": "Limpieza de superficies y eliminación de moho."
+        },
+        {
+            "Producto 1": "Sal de boro",
+            "Producto 2": "Acido citrico",
+            "Riesgo": "Bajo",
+            "Recomendaciones": "Usar guantes y gafas de protección.",
+            "Riesgos a la salud": "Puede causar irritación en los ojos.",
+            "Uso recomendado": "Limpieza de superficies y eliminación de moho."
         }
+
     ]
     
     
@@ -221,7 +285,10 @@ window.onload = function() {
     let usoRecomendado = '';
 
     for (let mezcla of mezclas) {
-        if (ingredients.includes(mezcla['Producto 1']) && ingredients.includes(mezcla['Producto 2'])) {
+        console.log('Mezcla:', mezcla);
+        console.log('Ingredientes:', ingredients);
+        if (ingredients.map(ingredient => ingredient.toLowerCase()).includes(mezcla['Producto 1'].toLowerCase()) && 
+        ingredients.map(ingredient => ingredient.toLowerCase()).includes(mezcla['Producto 2'].toLowerCase())) {
             existe = true;
             let riesgoTexto = mezcla['Riesgo'];
             if (riesgoTexto === 'Alto') {
