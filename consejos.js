@@ -217,7 +217,9 @@ function loadCards() {
                     }
 
                     // Update the HTML elements with the selected card information
-                    document.querySelector('#selected_card_tip').innerHTML = sug;
+                    let selectedCardTip = document.querySelector('#selected_card_tip');
+                    selectedCardTip.innerHTML = sug;
+                    selectedCardTip.scrollIntoView({ behavior: 'smooth' });
                 });
             });
         });
