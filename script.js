@@ -136,7 +136,11 @@ function loadCards() {
         document.querySelector('#product_cards_2').innerHTML = html;
         document.querySelectorAll('.card_2').forEach(function(card) {
             card.addEventListener('click', function() {
-              this.classList.add('selected');
+                const parentId = this.parentElement.id;
+                document.querySelectorAll(`#${parentId} .card_2`).forEach(function (card) {
+                    card.classList.remove('selected');
+                });
+                this.classList.add('selected');
             });
         });
   }

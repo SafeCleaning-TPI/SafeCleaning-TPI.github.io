@@ -113,7 +113,7 @@ window.onload = function() {
             "Producto 2": "Amoniaco",
             "Riesgo": "Alto",
             "Recomendaciones": "Usar en areas bien ventiladas y usar guantes",
-            "Riesgos a la salud": "Irritacion respiratoria, corrosivo",
+            "Riesgos a la salud": "Irritacion respiratoria y es corrosivo",
             "Uso recomendado": "Desinfeccion"
         },
         {
@@ -121,7 +121,7 @@ window.onload = function() {
             "Producto 2": "Acido sulfurico",
             "Riesgo": "Medio",
             "Recomendaciones": "Manipular con guantes y gafas de proteccion",
-            "Riesgos a la salud": "Quemaduras, corrosivo",
+            "Riesgos a la salud": "Quemaduras y es corrosivo",
             "Uso recomendado": "Limpiadores industriales"
         },
         {
@@ -145,7 +145,7 @@ window.onload = function() {
             "Producto 2": "Peroxido de hidrogeno",
             "Riesgo": "Medio",
             "Recomendaciones": "Usar guantes y mascarilla",
-            "Riesgos a la salud": "Irritacion ocular, respiratoria",
+            "Riesgos a la salud": "Irritacion ocular y respiratoria",
             "Uso recomendado": "Desinfección de superficies"
         },
         {
@@ -153,7 +153,7 @@ window.onload = function() {
             "Producto 2": "Alcohol isopropilico",
             "Riesgo": "Bajo",
             "Recomendaciones": "Usar en areas bien ventiladas",
-            "Riesgos a la salud": "Irritacion ocular, leve inflamabilidad",
+            "Riesgos a la salud": "Irritacion ocular, y es levemente inflamable",
             "Uso recomendado": "Limpieza de vidrios"
         },
         {
@@ -161,7 +161,7 @@ window.onload = function() {
             "Producto 2": "Acetona",
             "Riesgo": "Alto",
             "Recomendaciones": "Usar con precaucion y guantes",
-            "Riesgos a la salud": "Irritacion cutanea, corrosivo",
+            "Riesgos a la salud": "Irritacion cutanea y es corrosivo",
             "Uso recomendado": "Desinfeccion de superficies"
         },
         {
@@ -169,7 +169,7 @@ window.onload = function() {
             "Producto 2": "Detergente",
             "Riesgo": "Medio",
             "Recomendaciones": "Evitar contacto directo",
-            "Riesgos a la salud": "Irritacion cutanea, corrosivo",
+            "Riesgos a la salud": "Irritacion cutanea y es corrosivo",
             "Uso recomendado": "Limpieza de superficies"
         },
         {
@@ -177,7 +177,7 @@ window.onload = function() {
             "Producto 2": "Amoniaco",
             "Riesgo": "Alto",
             "Recomendaciones": "Usar en areas bien ventiladas y usar guantes",
-            "Riesgos a la salud": "Irritacion respiratoria, corrosivo",
+            "Riesgos a la salud": "Irritacion respiratoria y es corrosivo",
             "Uso recomendado": "Desinfeccion de superficies"
         },
         {
@@ -185,7 +185,7 @@ window.onload = function() {
             "Producto 2": "Bicarbonato de sodio",
             "Riesgo": "Bajo",
             "Recomendaciones": "Manipular con guantes y gafas de proteccion",
-            "Riesgos a la salud": "Irritacion cutanea, leve corrosivo",
+            "Riesgos a la salud": "Irritacion cutanea y es levemente corrosivo",
             "Uso recomendado": "Limpieza de desagües"
         }
     ]
@@ -213,50 +213,146 @@ window.onload = function() {
     // Asume que ingredients1 e ingredients2 son matrices y mezclas es una matriz de objetos
     const ingredients = [...ingredients1, ...ingredients2];
     let riesgo = 3;
+    let highestRiesgo = 0;
+    let ingredientes = '';
+    let existe = false;
+    let recomendaciones = '';
+    let riesgosSalud = '';
+    let usoRecomendado = '';
+
     for (let mezcla of mezclas) {
         if (ingredients.includes(mezcla['Producto 1']) && ingredients.includes(mezcla['Producto 2'])) {
-          let riesgoTexto = mezcla['Riesgo'];
-          if (riesgoTexto === 'Alto') {
-            riesgo = 3;
-          } else if (riesgoTexto === 'Medio') {
-            riesgo = 2;
-          } else if (riesgoTexto === 'Bajo') {
-            riesgo = 1;
-          }
-          recomendaciones = mezcla['Recomendaciones'];
-          riesgosSalud = mezcla['Riesgos a la salud'];
-          usoRecomendado = mezcla['Uso recomendado'];
-          console.log(`Los productos ${mezcla['Producto 1']} y ${mezcla['Producto 2']} están en la lista de ingredientes.`);
-          
-          if (riesgo === 3) {
-            break; // Detiene el bucle una vez que riesgo es igual a 3
-          }
+            existe = true;
+            let riesgoTexto = mezcla['Riesgo'];
+            if (riesgoTexto === 'Alto') {
+                riesgo = 3;
+            } else if (riesgoTexto === 'Medio') {
+                riesgo = 2;
+            } else if (riesgoTexto === 'Bajo') {
+                riesgo = 1;
+            }
+            if (riesgo > highestRiesgo) {
+                highestRiesgo = riesgo;
+                recomendaciones = mezcla['Recomendaciones'];
+                riesgosSalud = mezcla['Riesgos a la salud'];
+                usoRecomendado = mezcla['Uso recomendado'];
+                console.log(`Los productos ${mezcla['Producto 1']} y ${mezcla['Producto 2']} están en la lista de ingredientes.`);
+            }
+            if (highestRiesgo === 3) {
+                ingredientes = `${ingredients[0]} y ${ingredients[1]}`;
+                break; // Detiene el bucle una vez que riesgo es igual a 3
+            }
         }
-      }
+    }
+          // verifica si los productos son iguales
+    if (product1 === product2) {
+        riesgo = 1;
+    }
     
-      let fondo = document.getElementById('fondo');
+    let fondo = document.getElementById('fondo');
+    let nousar = document.getElementById('nousar');
+    let barra = document.getElementById('barra');
+    let espacio = document.getElementById('espacio');
+    let titulo = '';
 
-      if (riesgo === 3) {
+    if (riesgo === 3) {
         fondo.classList.add('alerta');
-      } else if (riesgo === 2) {
+        nousar.style.display = 'block';
+        barra.style.display = 'none';
+    } else if (riesgo === 2) {
         fondo.classList.add('cuidado');
-      } else if (riesgo === 1) {
+        espacio.style.marginTop = '30vh';
+    } else if (riesgo === 1) {
         fondo.classList.add('seguro');
-      }
-
-
-    let html = `
-        <div class="card_3_item">
-        <img class="card_3_img" src="MixFigures/${product1.img}" alt="Image 1">
-        <p class="card_3_txt" id="c3txt">${product1.Producto}</p>
+        espacio.style.marginTop = '30vh';
+    }
+    let html = '';
+    let html_precauciones = '';
+    let html_riesgos = '';
+    let html_usos = '';
+    if (product1 === product2) {
+        html = `
+            <div class="card_3_item">
+            <img class="card_3_img" src="MixFigures/${product1.img}" alt="Image 1">
+            <p class="card_3_txt" id="c3txt">${product1.Producto}</p>
+            </div>
+        `;
+        html_precauciones = `
+        <div class="card_4">
+            <h2>Precauciones</h2>
+            <p>
+            Si bien no estás mezclando, debes cuidar la ventilación y el uso de guantes como mínimo
+            </p>
+            <p>
+            Nunca lo uses directamente. Siempre dilúyelo en agua.
+            </p>
         </div>
-        <div class="card_3_item">
-        <img class="card_3_img" src="MixFigures/${product2.img}" alt="Image 2">
-        <p class="card_3_txt" id="c3txtb">${product2.Producto}</p>
+        `;
+        html_riesgos = '';
+        html_usos = '';
+    } else {
+        html = `
+            <div class="card_3_item">
+                <img class="card_3_img" src="MixFigures/${product1.img}" alt="Image 1">
+                <p class="card_3_txt" id="c3txt">${product1.Producto}</p>
+            </div>
+            <div class="card_3_item">
+                <img class="card_3_img" src="MixFigures/${product2.img}" alt="Image 2">
+                <p class="card_3_txt" id="c3txtb">${product2.Producto}</p>
+            </div>
+        `;
+        html_precauciones = `
+        <div class="card_4">
+            <h2>Precauciones</h2>
+            <p>Nunca lo uses directamente, diempre dilúyelo en agua.</p>
+            <p>${recomendaciones}</p>
         </div>
-  `;
+        `;
+        html_riesgos = `
+        <div class="card_4">
+            <h2>Riesgos a la salud</h2>
+            <p>${riesgosSalud}</p>
+        </div>
+        `;
+        html_usos = `
+        <div class="card_4">
+            <h2>Uso recomendado</h2>
+            <p>${usoRecomendado}</p>
+        </div>
+        `;
+    }
+    if (riesgo === 3 && existe) {
+        html_precauciones = `
+        <div class="card_4 alerta">
+            <h2>Razones</h2>
+            <p>
+            Mezclar ${ingredientes} es peligroso.</p> <p>Causa ${riesgosSalud}.
+            </p>
+        </div>
+        `;
+        html_riesgos = '<div class="space"></div>';
+        html_usos = '';
+    } else if (riesgo === 3 && !existe) {
+        html_precauciones = `
+        <div class="card_4 alerta">
+            <h2>Razones</h2>
+            <p>
+            No tenemos esta mezcla registrada como segura.</p>
+            <p>Lo mejor es que no lo intentes.
+            </p>
+        </div>
+        `;
+        html_riesgos = '<div class="space"></div>';
+        html_usos = '';
+    }
+
     //document.querySelector('#product_cards').innerHTML = html;
     document.querySelector('#mezclados').innerHTML = html;
+    document.querySelector('#precauciones').innerHTML = html_precauciones;
+    document.querySelector('#riesgos').innerHTML = html_riesgos;
+    document.querySelector('#usos').innerHTML = html_usos;
+    document.querySelectorAll('.card_3_item').forEach(item => {
+        item.style.backgroundColor = '#fff';});
     let mezclado = document.getElementById('c3txt');
     let mezcladob = document.getElementById('c3txtb');
     if (riesgo === 3) {
