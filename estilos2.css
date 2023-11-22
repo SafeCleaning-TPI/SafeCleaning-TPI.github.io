@@ -1,0 +1,518 @@
+@charset "UTF-8";
+/*Se definen las dos fuentes a usar en el sitio para texto y titulos respectivamente*/
+@font-face { 
+    font-family: rubik-font;
+    src: url('fonts/Rubik-VariableFont_wght.ttf');
+}
+@font-face { 
+    font-family: old-font;
+    src: url('fonts/IMFellEnglish-Regular.ttf');
+}
+
+  /*Estilos para la página, coloca un fondo fijo y que no se repite*/  
+body {             
+	background-color: #2f3e4f;                    
+	background-image: url(imagenes/Irithyll.png);
+	background-repeat:no-repeat;
+    background-position:top;
+    background-attachment: fixed;
+    margin: 0px;
+    overflow:visible;
+}
+
+a:link {
+	color: white;
+    font-weight: bold;
+	text-decoration:none; /* para que no subraye los vínculos */ 
+}
+a:visited {    /* indica el estilo cuando el cursor está sobre el elemento */ 
+	color: aliceblue;
+}
+a:hover {    /* indica el estilo cuando el cursor está sobre el elemento */ 
+	color: lightsteelblue;
+    transition: .6s; /* Se hace una transicion de 1 segundo en el estilo cuando se pasa el mouse por encima de cualquier elemento que tenha definido un cambio */
+}
+
+img:hover{
+    transition: .6s;
+}
+
+/*==================================================*/
+/* CONTENEDORES GRID PARA EL RESPONSIVE DESIGN*/
+
+header {
+    display: grid;
+    color: aliceblue;
+    width: 100%;
+    background-color: rgba(47, 62, 79, 0.88);
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 5px 10px 15px 0px black;
+    grid-template-columns: repeat(2,max-content);
+}
+
+header a{
+    display: grid;
+    text-decoration: none;
+    margin: 20px;
+}
+
+header a:hover {
+    background-color: aliceblue;
+    color: black;
+    cursor: pointer;
+}
+
+.footer {
+    background-color: steelblue;
+    color: aliceblue;
+    padding: 30px;
+    width: 100%;
+}
+.banner img{
+    width: 100%;
+}
+
+/*Estilos para limitar el tamaño del div y centrarlo*/
+.contenido {
+    margin: 0px;
+    margin-top: 10px;
+    background-color: rgba(47, 62, 79, 0.88);
+    padding: 50px;
+}
+
+.contenido iframe{
+    display: block;
+    width: 560px;
+    max-width: inherit;
+    height: 310px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.card {
+    display: table-row;
+    vertical-align: middle;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 0px;
+    /*border: 1px solid rgb(0,0,0,0);*/
+}
+
+/* Para el responsive design se elige una diagracion que divide la pantalla en 12 columnas. Esto permite controlar la proporcion de la pantalla que ocupa cada contenedor div y permite modificarlos dependiendo del ancho de la pantalla */
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+.col-img {
+    width: 40%;
+    padding: 0;
+    margin-left: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.col-txt {
+    width: 45%;
+    padding: 0;
+    margin-right: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    float:right;
+}
+.col-img img{
+    width: 100%;
+    padding: 0;
+    display: block;
+    vertical-align: middle;
+}
+.col-txt p{
+    position: relative;
+	margin: 0px;
+	font-family: rubik-font;
+	font-size: 18px;
+	text-align: justify;
+    color: whitesmoke;
+}
+
+/* ================================================ */ 
+/* ------------TITULOS------------------------------*/ 
+
+h1{     /* estilo para los titulares */ 
+	font-family: old-font;
+	font-size: 40px;
+	font-weight: bold;
+	text-align: left;
+    padding: 0px;
+    margin: 0px;
+} 
+h1:link { /*Estilos para el titular enlazado*/
+	color:aliceblue;
+    font-weight: bold;
+	cursor: pointer;
+	text-decoration: none;  /* para que no subraye los vínculos en los titulares*/
+}
+h1:visited { /*Estilos para el titular luego de ser visitado*/
+	color:aliceblue;
+	text-decoration: none;
+}
+
+h2{     /*Estilos para títulos de segundo orden, que serían los principales dentro del contenido*/
+	font-family: old-font;
+	color:aliceblue;
+	font-size: 30px;
+	font-weight: left;
+	text-align: center;
+	max-width:100%; 
+	margin: 0px;   
+    background-color: steelblue;
+    padding: 10px;
+} 
+h3{  /*Estilos para los subtítulos*/
+	color:aliceblue;
+    position: relative; 
+	margin: 30px;
+    font-family: old-font;
+	font-size: 25px;
+    text-align: left;
+} 
+
+/*---------Estilos para la barra de navegación se elige una lista de items con enlaces-------*/
+
+/* Colorea el botón correspondiente al menú que se selecciona indicando la página actual*/
+.activo {
+    background-color: dimgrey;
+}
+
+/*Estilos para los menu de navegacion*/
+.menunav {
+    display: inline-block;
+    grid-column: 1 / span 2;
+    grid-row: 2;
+}
+
+.title {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.menunav ul {
+    display: block;
+    list-style-type:none;
+    font-family: rubik-font;
+    color: white;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: steelblue;
+}
+/*Estilos para los elementos de las listas del menú de navegacion*/
+.menunav li {
+    float: left;
+    color: white;
+}
+/*Estilos para los enlaces del menú de navegacion*/
+.menunav li a {
+    display: block;
+    color: white;
+    font-weight:lighter;
+    text-align: center;
+    padding: 16px;
+    margin: 0;
+    text-decoration: none;
+}
+
+/* Cambia el color cuando se pasa el cursor por encima */
+.menunav li a:hover {
+    background-color: aliceblue;
+    color: black;
+}
+
+/*Alinea el elemento del menú a la derecha*/
+.menunav li.split {
+    float: right;
+}
+
+/*Estilos para las listas de contenido las tablas de contenido*/
+
+.menucont ul{
+    position: relative;
+    list-style-type:none;
+    font-family: rubik-font;
+    color: white;
+    background-color: steelblue;
+    float: left;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 10px;
+    overflow: hidden;
+    width: 100%;
+}
+/*Estilos para los items principales de las tablas de contenido en la página*/
+.menucont li{
+    float: center;
+    color: white;
+    width: 100%;
+}
+/*Estilos para los items secundarios de las tablas de contenido en la página*/
+.menucont li a{
+    display: block;
+    color: ghostwhite;
+    font-weight:lighter;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    float: center;
+}
+
+.menucont li a:hover {
+    background-color: aliceblue;
+    color: black;
+}
+
+.subitem {
+    float: center;
+    color: ghostwhite;
+    background-color: dimgrey;
+    width: inherit;
+}
+
+/* Estilos para las referencias*/
+.referencias ul{
+    list-style-type:none;
+    font-family: rubik-font;
+    color: white;
+    margin: auto;
+    padding: 0px;
+    width: 90%;
+    overflow: hidden;
+    background-color: dimgrey;
+}
+/*Estilos para los items principales de las tablas de contenido en la página*/
+.referencias li{
+    float: left;
+    color: white;
+    width: 50%;
+}
+/*Estilos para los items secundarios de las tablas de contenido en la página*/
+.referencias li a{
+    display: block;
+    color: ghostwhite;
+    font-weight:lighter;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    float: center;
+}
+
+.referencias li a:hover {
+    background-color: aliceblue;
+    color: black;
+}
+/*==============================================*/
+/*---------------Estilos para botones------------*/
+
+.topbutton {
+    display: block;
+    position: fixed;
+    bottom: 40%;
+    right: 0px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: steelblue;
+    cursor: pointer;
+    width: 64px;
+    height: 64px;
+    box-shadow: 5px 10px 15px 0px black;
+}
+
+.topbutton:hover {
+    background-color: aliceblue;
+}
+
+.menubutton {
+    display: none;
+    width: 60px;
+}
+
+.menubutton:hover {
+    background-color: dimgray;
+}
+/* Oculta el check box del menu */
+#btn-menu {
+  /*display: none;*/
+}
+
+
+/*==============================================*/
+/*---------------Estilos para texto------------*/
+/*Estilos para el texto de la página portada*/
+
+.portada {
+	position: relative;
+	margin: 0px;
+    padding: 10px 20px;
+	font-family: old-font;
+	font-size: 20px;
+	text-align: center;
+	text-shadow: 1px 1px #36363636;
+    color: whitesmoke;
+}
+
+/*Estilos para textos que se quieren enfatizar o de citaciones*/
+.cita {
+    position: relative;
+	margin: auto;
+    padding: 10px 20px;
+	font-family: old-font;
+	font-size: 20px;
+    font-weight: bold;
+	text-align: center;
+    color: whitesmoke;
+}
+
+
+/*Estilos para textos descriptivos que pueden contener o no imagenes*/
+.descripcion {
+	position: relative;
+	margin: 30px;
+	font-family: rubik-font;
+	font-size: 18px;
+	text-align: justify;
+    color: whitesmoke;
+}
+
+/*==================================================*/
+/* Imagenes */
+.imgr {
+	position: relative;
+	float: right;
+    margin: 28px;
+    margin-right: 0px;
+    margin-top: 0px;
+    width: 50%;
+    display: block;
+}
+.imgl {
+	position: relative;
+	float: left;
+    margin: 28px;
+    margin-left: 0px;
+    margin-top: 0px;
+    width: 50%;
+    display: block;
+}
+
+/*==================================================*/
+/* Para tabletas*/
+
+@media only screen and (max-width: 1200px) {
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+    .col-s-txt {float:none; width: 90%; margin:5%; margin-top: 10px;}
+    .col-s-img {float:none; width: 90%; margin:5%; margin-top: 0px;}
+    .imgl {width: 100%;}
+    .imgr {width: 100%;}
+}
+
+/*==================================================*/
+/* Para Smartphones*/
+
+
+@media only screen and (max-width: 800px) {
+    /* Aqui se permite modificar el ancho de todas las clases que comienzan con col- para simplificar el codigo */
+    [class*="col-"] {
+        width: 100%;
+    }
+    .col-s-txt {float:none; width: 90%; margin:5%; margin-top: 10px;}
+    .col-s-img {float:none; width: 90%; margin:5%; margin-top: 0px;}
+    .imgl {width: 100%;}
+    .imgr {width: 100%;}
+    
+    header {
+        /* Se definenen las propiedades personalizadas para el control del tamano de los iconos del menu, para poder animarlos a traves de estas.*/
+        --state-open: scale(1);
+        --state-close: scale(0);
+        /*  Propiedad personalizada para controlar la posicion del menu */
+        --state-menu: translate(100%);
+        /* En este caso se define el arreglo del header como un grid, para controlar mejor la posicion de los elementos.*/
+        display: grid;
+        background-color: steelblue;
+        position: fixed;
+        height: 70px;
+        z-index: 98;
+    }
+    header a{
+        margin: 0px 0px 0px 10px;
+    }
+    
+    .menunav li {width: 100%;}
+    
+    .menunav ul {
+        position: fixed;
+        top: 70px;
+        z-index: 99;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transform: var(--state-menu);
+        transition: .4s transform;
+    }
+  
+    .menubutton {display: flex;}
+    
+    .open {transform: var(--state-open);}
+    .close {transform: var(--state-close);}
+    
+    /* Se ubican los iconos de apertura y cierre del menu en la misma posicion, es decir, superpuestos */
+    .open, .close {
+        cursor: pointer;
+        grid-column: -2/-1;
+        grid-row: 1/2;
+        transition: .4s transform;
+    }
+    
+    /* Al dirigirse al identificador head cambia el estado de las variables, entonces el icono de open se reduce a cero y el de close aumenta de tamano*/
+    #head:target {
+        --state-open: scale(0);
+        --state-close: scale(1);
+        --state-menu: translate(0%);
+    }
+    
+    h1 {font-size: 30px;}
+    
+    /* Se crea el estilo cuerpo. Esto permite que el contenido se ubique por debajo del header sin que se oculte como consecuencia de fijar el header*/
+    .cuerpo {
+        position: relative;
+        top: 70px;}
+}

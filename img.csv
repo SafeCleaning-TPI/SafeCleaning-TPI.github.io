@@ -1,0 +1,22 @@
+Producto,Ingredientes,img
+Lejía o blanqueador,"['Cloro', 'Hipoclorito de sodio']",lejia_o_blanqueador.png
+Limpiadores de desagües,"['Hidroxido de sodio', 'Acido formico']",limpiadores_de_desagues.png
+Limpiadores industriales,"['Hidroxido de sodio', 'Acrilamida']",limpiadores_industriales.png
+Desinfectantes,"['Fenol', 'Formaldehido', 'Hipoclorito de sodio']",desinfectantes.png
+Desinfectantes para manos,['Fenol'],desinfectantes_para_manos.png
+Detergentes fuertes,['Acrilamida'],detergentes_fuertes.png
+Limpiadores multiusos,"['Amoniaco', 'Cloruro de benzalconio', 'Detergente']",limpiadores_multiusos.png
+Productos para cristales,['Amoniaco'],productos_para_cristales.png
+Fungicidas,['Sulfato de cobre'],fungicidas.png
+Productos de limpieza de piscinas,['Sulfato de cobre'],productos_de_limpieza_de_piscinas.png
+Descalcificadores,['Acido formico'],descalcificadores.png
+Limpiadores de inodoro,"['Acido sulfurico', 'hipoclorito de sodio']",limpiadores_de_inodoro.png
+Destapadores de cañerías,"['Acido sulfurico', 'soda caustica']",destapadores_de_canerias.png
+Detergentes de ropa,"['Acido sulfurico', 'amoniaco', 'fenol', 'formaldehido', 'hipoclorito de sodio']",detergentes_de_ropa.png
+Alcohol antiseptico,['Alcohol etilico'],alcohol_antiseptico.png
+Frutas citricas,['Acido citrico'],frutas_citricas.png
+Agua oxigenada,['Peroxido de hidrogeno'],agua_oxigenada.png
+Limpiadores de electrónicos,['Alcohol isopropilico'],limpiadores_de_electronicos.png
+Removedor de esmalte,['Acetona'],removedor_de_esmalte.png
+Polvo para hornear,['Bicarbonato de sodio'],polvo_para_hornear.png
+Vinagre,['Acido acetico'],vinagre.png

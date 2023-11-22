@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>SafeCleaning</title>
+  <link rel="stylesheet" href="estilos.css">
+    <script src="script.js"></script>
+</head>
+<body  onload="loadCards()">
+    <div class="col-12 android-title-bar">
+        <h1>¿Puedo hacer esta mezcla?</h1>
+    </div>
+    <div class="row">
+        <div class="search-container col-10">
+            <input type="text" class="search-bar" placeholder="Primer producto">
+            <button class="search-button">
+                <img src="MainFigures/magnifier_icon.png" alt="Search">
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card_2-container" id="product_cards_1">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="search-container col-10">
+            <input type="text" class="search-bar" placeholder="Segundo producto">
+            <button class="search-button">
+                <img src="MainFigures/magnifier_icon.png" alt="Search">
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card_2-container" id="product_cards_2">
+
+        </div>
+    </div>
+    <div class="row">
+        <button class="accion" onclick="window.location.href = 'danger.html'">Mezclar</button>
+    </div>
+    <div class="empty_row"></div>
+    <div class="empty_row"></div>
+    <div class="empty_row"></div>
+    <div class="home-button">
+        <a href="index.html">
+            <img src="MainFigures/logo.png" alt="Logo SafeCleaning">
+        </a>
+    </div>
+    <script src="mezcla.js"></script>
+</body>
+</html>

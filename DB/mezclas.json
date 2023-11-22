@@ -1,0 +1,82 @@
+[
+    {
+        "Producto 1": "Cloro",
+        "Producto 2": "Amoniaco",
+        "Riesgo": "Alto",
+        "Recomendaciones": "Usar en areas bien ventiladas y usar guantes",
+        "Riesgos a la salud": "Irritacion respiratoria, corrosivo",
+        "Uso recomendado": "Desinfeccion"
+    },
+    {
+        "Producto 1": "Hidroxido de sodio",
+        "Producto 2": "Acido sulfurico",
+        "Riesgo": "Medio",
+        "Recomendaciones": "Manipular con guantes y gafas de proteccion",
+        "Riesgos a la salud": "Quemaduras, corrosivo",
+        "Uso recomendado": "Limpiadores industriales"
+    },
+    {
+        "Producto 1": "Fenol",
+        "Producto 2": "Alcohol etilico",
+        "Riesgo": "Bajo",
+        "Recomendaciones": "Evitar contacto directo",
+        "Riesgos a la salud": "Irritacion leve",
+        "Uso recomendado": "Desinfectantes"
+    },
+    {
+        "Producto 1": "Acrilamida",
+        "Producto 2": "Acido citrico",
+        "Riesgo": "Alto",
+        "Recomendaciones": "Evitar inhalacion directa",
+        "Riesgos a la salud": "Irritacion respiratoria",
+        "Uso recomendado": "Limpieza de superficies"
+    },
+    {
+        "Producto 1": "Formaldehido",
+        "Producto 2": "Peroxido de hidrogeno",
+        "Riesgo": "Medio",
+        "Recomendaciones": "Usar guantes y mascarilla",
+        "Riesgos a la salud": "Irritacion ocular, respiratoria",
+        "Uso recomendado": "Desinfección de superficies"
+    },
+    {
+        "Producto 1": "Amoniaco",
+        "Producto 2": "Alcohol isopropilico",
+        "Riesgo": "Bajo",
+        "Recomendaciones": "Usar en areas bien ventiladas",
+        "Riesgos a la salud": "Irritacion ocular, leve inflamabilidad",
+        "Uso recomendado": "Limpieza de vidrios"
+    },
+    {
+        "Producto 1": "Cloruro de benzalconio",
+        "Producto 2": "Acetona",
+        "Riesgo": "Alto",
+        "Recomendaciones": "Usar con precaucion y guantes",
+        "Riesgos a la salud": "Irritacion cutanea, corrosivo",
+        "Uso recomendado": "Desinfeccion de superficies"
+    },
+    {
+        "Producto 1": "Sulfato de cobre",
+        "Producto 2": "Detergente",
+        "Riesgo": "Medio",
+        "Recomendaciones": "Evitar contacto directo",
+        "Riesgos a la salud": "Irritacion cutanea, corrosivo",
+        "Uso recomendado": "Limpieza de superficies"
+    },
+    {
+        "Producto 1": "Hipoclorito de sodio",
+        "Producto 2": "Amoniaco",
+        "Riesgo": "Alto",
+        "Recomendaciones": "Usar en areas bien ventiladas y usar guantes",
+        "Riesgos a la salud": "Irritacion respiratoria, corrosivo",
+        "Uso recomendado": "Desinfeccion de superficies"
+    },
+    {
+        "Producto 1": "Acido formico",
+        "Producto 2": "Bicarbonato de sodio",
+        "Riesgo": "Bajo",
+        "Recomendaciones": "Manipular con guantes y gafas de proteccion",
+        "Riesgos a la salud": "Irritacion cutanea, leve corrosivo",
+        "Uso recomendado": "Limpieza de desagües"
+    }
+]
